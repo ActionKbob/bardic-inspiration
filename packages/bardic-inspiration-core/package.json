@@ -1,0 +1,42 @@
+{
+  "name": "@repo/bardic-inspiration-core",
+  "version": "0.0.0",
+  "author": "Kbob",
+  "license": "ISC",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./styles.css": "./dist/index.css",
+    "./components/*": "./dist/components.js",
+    "./*": "./dist/*.js"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "scripts": {
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build:components": "tsc && tsc-alias",
+    "check-types": "tsc --noEmit",
+    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev:components": "tsc --watch & tsc-alias --watch",
+    "lint": "eslint src --max-warnings 0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/tailwind-config": "*",
+    "@repo/typescript-config": "*",
+    "@tailwindcss/cli": "^4.1.5",
+    "@types/react": "^19.1.0",
+    "eslint": "^9.33.0",
+    "tailwindcss": "^4.1.5",
+    "typescript": "5.9.2",
+		"tsc-alias": "^1.8.16"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1"
+  }
+}

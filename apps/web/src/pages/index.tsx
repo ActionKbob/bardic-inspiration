@@ -1,13 +1,11 @@
 import RootLayout from "@/layouts/rootLayout";
 
-import { Draggable } from '@repo/ui/Draggable';
+import { App } from '@repo/bardic-inspiration-core/App'
 
 const HomePage = () => {
 	return (
 		<RootLayout>
-			<Draggable>
-				:D
-			</Draggable>
+			<App />
 		</RootLayout>
 	)
 }
